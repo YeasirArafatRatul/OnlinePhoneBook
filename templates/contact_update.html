@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+
+{% block title %}
+Update {{ contact }}'s info
+{% endblock title %}
+
+{% block content %}
+
+<div class = "container">
+<h2 class = "heading font-weight-light text-center"> Update {{contact}}'s info </h2>
+<hr>
+</div>
+
+<div class="container w-25 card p-4 mt-4">
+<form action="" method="POST" enctype ="multiipart/form-data">
+{% csrf_token %}
+
+{{ form|crispy }}
+<input type="submit" value = "Done" class = "w-100 text-white text-center my-2 btn btn-info">
+
+</div>
+
+{% endblock %}
+

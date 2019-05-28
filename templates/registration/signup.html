@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+
+{% block title %}
+PhoneBook SignUp
+{% endblock title %}
+
+{% block content %}
+
+<div class = "container">
+<h2 class = "heading font-weight-light text-center"> LOGIN </h2>
+<hr>
+</div>
+
+<div class="container w-25 card p-4 mt-4">
+<form action="" method="POST" enctype ="multiipart/form-data">
+{% csrf_token %}
+
+{{ form|crispy }}
+<input type="submit" value = "Login" class = "w-100 text-white text-center my-2 btn btn-info">
+<div class="border-top pt-4">
+				<small class="text-muted">Already Have An Account? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{% url 'login' %}">Login</a>
+				</small>
+		</div>
+</div>
+
+{% endblock %}
+
